@@ -4,7 +4,7 @@ class Api::V1::BiddersAuthController < ApplicationController
 
     if @bidder && @bidder.authenticate(params[:password])
       token = issue_token(jwt: @bidder.id)
-      render json: {jwt: token, email: @bidder.email, name: @bidder.name, img_url: @bidder.img_url}
+      render json: {jwt: token, email: @bidder.email, name: @bidder.name}
     else
       render json: {error: 'User is invalid'}, status: :unauthorized
     end

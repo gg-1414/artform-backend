@@ -1,5 +1,5 @@
 class ArtistSerializer < ActiveModel::Serializer
-  attributes :id, :email, :password_digest, :name, :img_url
+  attributes :id, :email, :name, :img_url
   has_many :arts
 
   def arts
