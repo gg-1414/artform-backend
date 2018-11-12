@@ -6,4 +6,6 @@ class ApplicationController < ActionController::API
   def decode_token(payload)
     JWT.decode(payload, 'secret')
   end
+
+  # currentUser
 end

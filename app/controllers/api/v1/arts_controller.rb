@@ -9,6 +9,10 @@ class Api::V1::ArtsController < ApplicationController
     render json: @art
   end
 
+  # def edit
+  #
+  # end
+
   def create
     @art = Art.new(art_params)
 
@@ -20,6 +24,7 @@ class Api::V1::ArtsController < ApplicationController
   end
 
   def update
+    # start time default to 0
     @art = Art.find(params[:id])
     if @art.update(art_params)
       render json: @art
@@ -33,9 +38,22 @@ class Api::V1::ArtsController < ApplicationController
     @art.destroy
   end
 
+
+  def winner
+    byebug
+  end
+
+#   (byebug) params
+# <ActionController::Parameters {"start_time"=>"11:9", "controller"=>"api/v1/arts", "action"=>"update", "id"=>"17", "art"=>{"start_time"=>"1
+# 1:9"}} permitted: false>
+
+# (byebug) art_params
+# Unpermitted parameter: :start_time
+
   private
 
   def art_params # strong params
-    params.require(:art).permit(:artist_id, :title, :starting_price, :img_url)
+    params.require(:art).permit(:artist_id, :title, :starting_price, :img_url, :start_time, :winner_id)
   end
+
 end

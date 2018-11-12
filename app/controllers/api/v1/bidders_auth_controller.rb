@@ -11,10 +11,10 @@ class Api::V1::BiddersAuthController < ApplicationController
   end
 
   def show
+    # byebug
     token = request.headers["Authorization"]
     decoded_token = decode_token(token)
-    # byebug
     @bidder = Bidder.find(decoded_token[0]["jwt"])
-    render json: @bidder
+    render json: {id: @bidder.id, email: @bidder.email, name: @bidder.name}
   end
 end

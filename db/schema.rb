@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_202107) do
+ActiveRecord::Schema.define(version: 2018_11_10_054859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(version: 2018_11_05_202107) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "open", default: true
+    t.string "start_time", default: ""
+    t.integer "winner_id"
   end
 
   create_table "bidders", force: :cascade do |t|

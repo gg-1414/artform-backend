@@ -1,11 +1,8 @@
 class ArtSerializer < ActiveModel::Serializer
-  attributes :id, :artist, :title, :starting_price, :img_url, :open
+  attributes :id, :title, :starting_price, :img_url, :start_time, :winner_id
   has_many :tags
   has_many :biddings
-
-  def artist
-    object.artist.name
-  end
+  belongs_to :artist
 
   def tags
     object.tags.map do |tag|
@@ -20,7 +17,8 @@ class ArtSerializer < ActiveModel::Serializer
     object.biddings.map do |bidding|
       {
         id: bidding.id,
-        bidder_id: bidding.bidder_id,
+        bidder_id: bidding.bidder.id,
+        bidder_name: bidding.bidder.name,
         bid_amount: bidding.bid_amount
       }
     end

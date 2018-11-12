@@ -15,6 +15,6 @@ class Api::V1::ArtistsAuthController < ApplicationController
     decoded_token = decode_token(token)
     # byebug
     @artist = Artist.find(decoded_token[0]["jwt"])
-    render json: @artist
+    render json: {id: @artist.id, email: @artist.email, name: @artist.name, img_url: @artist.img_url}
   end
 end
