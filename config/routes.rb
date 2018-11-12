@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get '/current_artist', to: 'artists_auth#show'
       post '/bidders_auth', to: 'bidders_auth#create'
       get '/current_bidder', to: 'bidders_auth#show'
-      get '/arts/winner/:id', to: 'arts#winner'
+      patch '/arts/winner/:id', to: 'arts#winner'
     end
   end
 end

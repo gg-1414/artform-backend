@@ -40,7 +40,12 @@ class Api::V1::ArtsController < ApplicationController
 
 
   def winner
-    byebug
+    @art = Art.find(params[:id])
+    if @art.update(winner_id:params[:winner_id])
+      render json:@art
+    else
+      render json: @art.errors, status: :unprocessable_entity
+    end 
   end
 
 #   (byebug) params
