@@ -1,6 +1,7 @@
 class BidderSerializer < ActiveModel::Serializer
-  attributes :id, :email, :password_digest, :name, :picture
+  attributes :id, :email, :password_digest, :name
   has_many :biddings
+  has_many :messages
 
   def biddings
     object.biddings.map do |bidding|

@@ -6,7 +6,7 @@ class CreateArts < ActiveRecord::Migration[5.2]
       t.integer :starting_price
       t.string :img_url
 
-      t.timestamps
+      t.timestamps 
     end
   end
 end

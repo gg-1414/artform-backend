@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :biddings, only: [:index, :create, :update, :destroy]
       resources :tags, only: [:index, :create, :destroy]
       resources :art_tags, only: [:index, :create, :destroy]
+      resources :messages, only: [:index, :show, :create]
 
       get '/arts/search/:tag', to: 'tags#search', as: 'search_art'
       post '/artists_auth', to: 'artists_auth#create'

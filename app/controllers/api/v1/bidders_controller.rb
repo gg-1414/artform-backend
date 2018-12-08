@@ -10,7 +10,8 @@ class Api::V1::BiddersController < ApplicationController
   end
 
   def create
-    @bidder = Bidder.new(bidder_params)
+    byebug
+    @bidder = Bidder.new(params)
 
     if @bidder.save
       render json: @bidder, status: :created

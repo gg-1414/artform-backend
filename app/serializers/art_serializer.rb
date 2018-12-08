@@ -23,4 +23,5 @@ class ArtSerializer < ActiveModel::Serializer
       }
     end
   end
+
 end

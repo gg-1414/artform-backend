@@ -1,9 +1,11 @@
 gina = Artist.create(email: "gina@gmail.com", password: "123", password_confirmation: "123", name: "Gina", img_url: "/images/artist_gina.jpg")
 joshua = Artist.create(email: "joshua@gmail.com", password: "123", password_confirmation: "123", name: "Joshua", img_url: "/images/artist_joshua_filemon.jpg")
 emi = Artist.create(email: "emi@gmail.com", password: "123", password_confirmation: "123", name: "Emi", img_url: "/images/artist_emi_anderson.jpg")
+trish = Artist.create(email: "trish@gmail.com", password: "123", password_confirmation: "123", name: "Trish", img_url: "/images/artist_trish.jpg")
 
 juan = Bidder.create(email: "juan@gmail.com", password: "123", password_confirmation: "123", name: "Juan")
 kevin = Bidder.create(email: "kevin@gmail.com", password: "123", password_confirmation: "123", name: "Kevin")
+linh = Bidder.create(email: "linh@gmail.com", password: "123", password_confirmation: "123", name: "Linh")
 
 boi = Art.create(artist_id: joshua.id, title: "Boi", starting_price: 15, img_url: '/images/joshua_filemon_3.jpg')
 figures = Art.create(artist_id: gina.id, title: "Figures", starting_price: 20, img_url: '/images/figures.jpg')
@@ -22,11 +24,13 @@ tiffany = Art.create(artist_id: gina.id, title: "Tiffany", starting_price: 10, i
 joshua1 = Art.create(artist_id: joshua.id, title: "Rest", starting_price: 45, img_url: '/images/joshua_filemon_1.jpg')
 joshua2 = Art.create(artist_id: joshua.id, title: "Noir", starting_price: 10, img_url: '/images/joshua_filemon_2.jpg')
 joshua4 = Art.create(artist_id: joshua.id, title: "Schecter Print", starting_price: 30, img_url: '/images/joshua_filemon_4.jpg')
+trish = Art.create(artist_id: trish.id, title: "Still Life", starting_price: 25, img_url: '/images/trish.jpg')
 joshua6 = Art.create(artist_id: joshua.id, title: "Punk Skull", starting_price: 25, img_url: '/images/joshua_filemon_6.jpg')
 joshua8 = Art.create(artist_id: joshua.id, title: "Adventure Time", starting_price: 15, img_url: '/images/joshua_filemon_8.jpg')
 
-Bidding.create(art_id: tiffany.id, bidder_id: juan.id, bid_amount: 30)
-Bidding.create(art_id: fremont.id, bidder_id: juan.id, bid_amount: 40)
+# Bidding.create(art_id: boi.id, bidder_id: juan.id, bid_amount: 30)
+# Bidding.create(art_id: boi.id, bidder_id: juan.id, bid_amount: 40)
+# Bidding.create(art_id: fremont.id, bidder_id: juan.id, bid_amount: 40)
 
 photography = Tag.create(name: "photography")
 color = Tag.create(name: "color")

@@ -1,6 +1,6 @@
 class Api::V1::ArtsController < ApplicationController
   def index
-    @arts = Art.all
+    @arts = Art.order(:id)
     render json: @arts
   end
 
@@ -9,9 +9,7 @@ class Api::V1::ArtsController < ApplicationController
     render json: @art
   end
 
-  # def edit
-  #
-  # end
+  def
 
   def create
     @art = Art.new(art_params)
@@ -42,18 +40,11 @@ class Api::V1::ArtsController < ApplicationController
   def winner
     @art = Art.find(params[:id])
     if @art.update(winner_id:params[:winner_id])
-      render json:@art
+      render json: @art
     else
       render json: @art.errors, status: :unprocessable_entity
-    end 
+    end
   end
-
-#   (byebug) params
-# <ActionController::Parameters {"start_time"=>"11:9", "controller"=>"api/v1/arts", "action"=>"update", "id"=>"17", "art"=>{"start_time"=>"1
-# 1:9"}} permitted: false>
-
-# (byebug) art_params
-# Unpermitted parameter: :start_time
 
   private
 

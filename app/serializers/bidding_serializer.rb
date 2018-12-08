@@ -6,6 +6,7 @@ class BiddingSerializer < ActiveModel::Serializer
   # end
 
   def bidder
-    object.bidder.name
+    {id: object.bidder.id, name: object.bidder.name}
   end
+
 end

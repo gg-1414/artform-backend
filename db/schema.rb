@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 2018_11_12_225709) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer "art_id"
     t.integer "bidder_id"
-    t.string "message"
+    t.integer "winner_id"
+    t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
